@@ -453,8 +453,10 @@ async function startServer(): Promise<void> {
     app.use(vite.middlewares);
   }
 
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Virtual Network Museum server running at http://localhost:${PORT}`);
+ app.listen(PORT, "0.0.0.0", () => {
+    console.log("Virtual Network Museum is running!");
+    console.log(`Local URL: http://localhost:${PORT}`);
+    console.log(`Network URL: http://YOUR-IP-ADDRESS:${PORT}`);
   });
 }
 
