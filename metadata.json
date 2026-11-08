@@ -1,0 +1,8 @@
+{
+  "name": "Remix Virtual Network Museum",
+  "description": "Interactive educational museum for computer networking featuring the Packets Room, Transmission Media Room, Netiquette Room, and Mobile Communication exhibits with step-by-step interactive concepts, teacher poster galleries, and EduGuide AI assistance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

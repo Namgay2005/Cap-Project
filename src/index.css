@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+:root {
+  --museum-canvas: #faf8f4;
+  --museum-surface: #ffffff;
+  --museum-muted: #f2eee4;
+  --museum-border: #e5e0d5;
+  --museum-border-strong: #d6d0c4;
+  --museum-navy: #152847;
+  --museum-navy-hover: #1e3a66;
+  --museum-gold: #e59b14;
+  --museum-gold-hover: #cf8a0e;
+
+  /* Harmonized 5-Wing Curatorial Palette */
+  --wing-packets: #1e4fd6;
+  --wing-transmission: #0d8278;
+  --wing-netiquette: #c46b08;
+  --wing-mobile: #5e35b1;
+  --wing-explore: #b8295c;
+}
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--museum-canvas);
+    color: #334155;
+  }
+
+  h1, h2, h3, .font-serif-title {
+    font-family: 'Fraunces', Georgia, serif;
+    color: inherit;
+  }
+
+  code, pre, .font-mono-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.font-serif-title {
+  font-family: 'Fraunces', Georgia, serif;
+}
+
+.font-sans-body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
