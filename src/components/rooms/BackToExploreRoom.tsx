@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CheckCircle2, Trash2 } from 'lucide-react';
 import { MuseumRoom } from '../MuseumNavbar';
 
-interface ExitGalleryRoomProps {
+interface BackToExploreRoomProps {
   onNavigateRoom?: (room: MuseumRoom) => void;
 }
 
@@ -95,6 +95,9 @@ interface SavedReflection {
 }
 
 const VIDEO_STORAGE_KEY = 'exit_gallery_summary_video_url';
+
+// Default video shown in the Video Theatre (Back to Explore room).
+const DEFAULT_VIDEO_URL = 'https://youtu.be/RYqlVUEmFxQ';
 const REFLECTIONS_STORAGE_KEY = 'exit_gallery_saved_reflections';
 
 function normalizeVideoEmbedUrl(raw: string): {
@@ -129,7 +132,7 @@ function normalizeVideoEmbedUrl(raw: string): {
   return { type: 'iframe', src: trimmed };
 }
 
-export const ExitGalleryRoom: React.FC<ExitGalleryRoomProps> = ({
+export const BackToExploreRoom: React.FC<BackToExploreRoomProps> = ({
   onNavigateRoom,
 }) => {
   // Expandable key-point review cards
@@ -140,9 +143,9 @@ export const ExitGalleryRoom: React.FC<ExitGalleryRoomProps> = ({
   // Video Theatre state
   const [savedVideoUrl, setSavedVideoUrl] = useState<string>(() => {
     try {
-      return localStorage.getItem(VIDEO_STORAGE_KEY) || '';
+      return localStorage.getItem(VIDEO_STORAGE_KEY) || DEFAULT_VIDEO_URL;
     } catch {
-      return '';
+      return DEFAULT_VIDEO_URL;
     }
   });
   const [videoInput, setVideoInput] = useState('');
@@ -404,7 +407,7 @@ export const ExitGalleryRoom: React.FC<ExitGalleryRoomProps> = ({
             <span>Video Theatre</span>
           </h2>
           <p className="text-slate-600 text-sm sm:text-base mt-1">
-            Watch the summary video your team has created for the museum.
+            Watch the summary video for the museum.
           </p>
 
           <div className="mt-4 rounded-2xl border-2 border-dashed border-[#d6d0c4] bg-white overflow-hidden">
@@ -416,6 +419,13 @@ export const ExitGalleryRoom: React.FC<ExitGalleryRoomProps> = ({
                 <p className="text-xs sm:text-sm text-slate-500">
                   Summary video will appear here once a link is saved
                 </p>
+                <button
+                  type="button"
+                  onClick={() => setSavedVideoUrl(DEFAULT_VIDEO_URL)}
+                  className="mt-4 px-4 py-2 rounded-xl bg-[#b8295c] hover:bg-[#991f4b] text-white text-xs font-semibold transition-colors cursor-pointer"
+                >
+                  ▶ Show Museum Video
+                </button>
               </div>
             ) : (
               <div className="p-4 space-y-3">

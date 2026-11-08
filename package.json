@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsx server.ts",
     "build": "vite build",
-    "start":  "tsx server.ts",
+    "start": "tsx server.ts",
     "lint": "tsc --noEmit"
   },
   "dependencies": {
@@ -28,7 +28,7 @@
     "@types/react-dom": "^19.0.4",
     "autoprefixer": "^10.4.21",
     "tailwindcss": "^4.1.4",
-    "tsx": "^4.19.3",
+    "tsx": "^4.23.15",
     "typescript": "^5.8.3"
   }
 }

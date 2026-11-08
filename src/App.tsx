@@ -9,7 +9,7 @@ import { TransmissionMediaRoom } from './components/rooms/TransmissionMediaRoom'
 import { NetiquetteRoom } from './components/rooms/NetiquetteRoom';
 import { MobileCommRoom } from './components/rooms/MobileCommRoom';
 import { ExploreLobby } from './components/rooms/ExploreLobby';
-import { ExitGalleryRoom } from './components/rooms/ExitGalleryRoom';
+import { BackToExploreRoom } from './components/rooms/BackToExploreRoom';
 import { Footer } from './components/Footer';
 
 function roomFromPathname(pathname: string): MuseumRoom {
@@ -103,7 +103,7 @@ export function App() {
         )}
 
         {activeRoom === 'explore' && (
-          <ExitGalleryRoom onNavigateRoom={handleSelectRoom} />
+          <BackToExploreRoom onNavigateRoom={handleSelectRoom} />
         )}
       </main>
 
